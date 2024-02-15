@@ -1,0 +1,13 @@
+def random_phone_number():
+    return f"+1-{random.randint(100, 999)}-{random.randint(100, 999)}-{random.randint(1000, 9999)}"
+import datetime
+
+def random_date(start_date, end_date):
+    time_delta = end_date - start_date
+    random_days = random.randint(0, time_delta.days)
+    random_date = start_date + datetime.timedelta(days=random_days)
+    return random_date
+
+start_date = datetime.date(2023, 1, 1)
+end_date = datetime.date(2023, 12, 31)
+print("Random Date:", random_date(start_date, end_date))
